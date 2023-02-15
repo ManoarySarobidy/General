@@ -1,0 +1,21 @@
+
+package annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ *
+ * @author sarobidy
+ */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+
+public @interface Table {
+    public String table() default "";
+    public String database() default "";
+    public int colsCount() default 1;
+    public String driver() default "postgres";
+}
